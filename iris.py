@@ -12,25 +12,18 @@ df = pd.DataFrame(iris.data, columns=iris.feature_names)
 # 目標値
 df['target'] = iris.target
 
-df.shape
-
-df.tail(5)
-
-df
 
 # 目標値を数字から花の名前に変更
 df.loc[df['target'] == 0, 'target'] = 'setosa'
 df.loc[df['target'] == 1, 'target'] = 'versicolor'
 df.loc[df['target'] == 2, 'target'] = 'virginica'
 
-df
+
 
 #予測モデル構築
 x = iris.data[:,[0,2]]  #すべての行の０番目と２番目の列を取得する
 y = iris.target
 
-x
-y
 
 #ロジスティック回帰
 clf = LogisticRegression()
